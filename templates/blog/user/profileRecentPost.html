@@ -1,0 +1,49 @@
+{% extends 'commannavbar.html' %}
+
+{% block title %}User Profile{% endblock title %}
+
+{% block js %}
+<script>
+let previews = document.getElementsByClassName('preview');
+Array.from(previews).forEach((element)=>{
+  element.innerHTML = element.innerText;
+})
+</script>
+{% endblock js %}
+
+{% block blogactive %}active{% endblock blogactive %}
+
+
+{% block body %}
+<div class="container my-3">
+<h3 class = "my-3"> {{user.username}}'s Recent Work</h3>
+
+{% if allposts.count == 0 %}
+<p> You have no recent work!</p>
+
+{% else %}
+
+{% for post in allposts %}
+    
+    <div class="col-md-6 my-3">
+      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">{{post.category}} article by {{post.author}} ({{post.views}} views)</strong>
+          <h3 class="mb-0">{{post.title}}</h3>
+          <div class="mb-1 text-muted">{{post.datetime}}</div>
+          <p class="card-text mb-auto"><div class = "preview">{{post.content|safe|truncatechars:250}}</div></p>
+          <div class="bt"><a class="btn btn-sm btn-primary" href="/blog/{{post.slug}}" role="button">Continue Reading</a></div>
+        </div>
+        <!--
+        <div class="col-auto d-none d-lg-block">
+          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+        </div>
+        -->
+      </div>
+      
+    </div>
+{% endfor %}
+{% endif %}
+</div>
+
+{% endblock body %}

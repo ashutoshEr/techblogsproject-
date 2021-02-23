@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="static/img/style2.css">
+</head>
+
+<body>
+    <form method="post" action="/signup">
+        {% csrf_token %}
+        <div class="login-box">
+            <h1>Sign up</h1>
+            <div class="textbox">
+                <i class="fas fa-user-circle"></i>
+                <input type="text" name="username" id="username" placeholder="Username" Required>
+            </div>
+
+            <div class="textbox">
+                <i class="fas fa-pencil-alt"></i>
+                <input type="text" name="firstname" id="firstname" placeholder="Firstname" Required>
+            </div>
+
+            <div class="textbox my-2">
+                <i class="	fas fa-edit"></i>
+                <input type="text" name="lastname" id="lastname" placeholder="Lastname" Required>
+            </div>
+
+            <div class="textbox">
+                <i class="fas fa-envelope"></i>
+                <input type="email" name="email" id="email" placeholder="Email" Required>
+            </div>
+
+            <div class="textbox">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="pass1" id="pass1" placeholder="Create your password" Required>
+            </div>
+
+            <div class="textbox">
+                <i class="fas fa-lock"></i>
+                <input type="password" name="pass2" id="pass2" placeholder="Type your password again" Required>
+            </div>
+
+            <input type="submit" class="btn" value="Sign up">
+        </div>
+    </form>
+</body>
+
+</html>

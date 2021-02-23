@@ -1,0 +1,31 @@
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title> log in</title>
+  <link rel="stylesheet" href="static/img/style.css">
+</head>
+
+<body>
+
+
+  <form method="post" action="/login">
+    {% csrf_token %}
+    <div class="login-box">
+      <h1>Login</h1>
+      <div class="textbox">
+        <i class="fas fa-user"></i>
+        <input type="text" name="loginusername" id="loginusername" placeholder="Username">
+      </div>
+
+      <div class="textbox">
+        <i class="fas fa-lock"></i>
+        <input type="password" name="loginpassword" id="loginpassword" placeholder="Password">
+      </div>
+
+      <input type="submit" class="btn" value="log in">
+    </div>
+  </form>
+  </body>
+
+</html>

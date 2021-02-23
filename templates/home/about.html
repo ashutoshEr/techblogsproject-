@@ -1,0 +1,274 @@
+{% extends 'commannavbar.html' %}
+{% block title %} About Us {% endblock title %}
+{% block aboutactive %}active{% endblock aboutactive %}
+
+{% block style %}
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+    @import url("https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+    body {
+        margin: 0;
+        font-family: 'Open Sans', sans-serif;
+    }
+
+    * {
+        box-sizing: border-box;
+    }
+
+    .team-section {
+        background-color: #009688;
+        min-height: 100vh;
+        padding: 20px 10px 10px;
+    }
+
+    .container {
+        max-width: 1170px;
+        margin: auto;
+    }
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .team-section .section-title {
+        flex-basis: 100%;
+        max-width: 100%;
+        margin-bottom: 70px;
+    }
+
+    .team-section .section-title h1 {
+        font-size: 40px;
+        text-align: center;
+        margin: 0;
+        color: #000000;
+        font-weight: 700;
+    }
+
+    .team-section .section-title p {
+        font-size: 16px;
+        text-align: center;
+        margin: 15px 0 0;
+        color: #000000;
+    }
+
+    .team-section .team-items {
+
+        flex-basis: 100%;
+        max-width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .team-section .team-items .item {
+        flex-basis: calc(25% - 30px);
+        max-width: calc(25% - 30px);
+        transition: all .5s ease;
+        margin-bottom: 40px;
+    }
+
+    .team-section .team-items .item img {
+        display: block;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .team-section .team-items .item .inner {
+        position: relative;
+        z-index: 11;
+        padding: 0 15px;
+    }
+
+    .team-section .team-items .item .inner .info {
+        background-color: #009688;
+        text-align: center;
+        padding: 20px 15px;
+        border-radius: 8px;
+        transition: all .5s ease;
+        margin-top: -40px;
+    }
+
+    .team-section .team-items .item:hover .info {
+        transform: translateY(-20px);
+    }
+
+    .team-section .team-items .item:hover {
+        transform: translateY(-10px);
+    }
+
+    .team-section .team-items .item .inner .info h5 {
+        margin: 0;
+        font-size: 18px;
+        font-weight: 600;
+        color: #ffffff;
+    }
+
+    .team-section .team-items .item .inner .info p {
+        font-size: 16px;
+        font-weight: 400;
+        color: #c5c5c5;
+        margin: 10px 0 0;
+    }
+
+    .team-section .team-items .item .inner .info .social-links {
+        padding-top: 15px;
+    }
+
+    .team-section .team-items .item .inner .info .social-links a {
+        display: inline-block;
+        height: 32px;
+        width: 32px;
+        background-color: #ffffff;
+        color: #009688;
+        border-radius: 50%;
+        margin: 0 2px;
+        text-align: center;
+        line-height: 32px;
+        font-size: 16px;
+        transition: all .5s ease;
+    }
+
+    .team-section .team-items .item .inner .info .social-links a:hover {
+        box-shadow: 0 0 10px #000;
+    }
+
+    /*responsive*/
+    @media(max-width: 991px) {
+        .team-section .team-items .item {
+            flex-basis: calc(50% - 30px);
+            max-width: calc(50% - 30px);
+
+        }
+    }
+
+    @media(max-width: 767px) {
+        .team-section .team-items .item {
+            flex-basis: calc(100%);
+            max-width: calc(100%);
+
+        }
+
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: "Open Sans", sans-serif;
+        box-sizing: border-box;
+    }
+
+
+    .about-section {
+        background: url("static/img/pic1.jpg") no-repeat left;
+        background-size: 55%;
+        background-color: #fdfdfd;
+        overflow: hidden;
+        padding: 100px 0;
+    }
+
+    .inner-container {
+        width: 55%;
+        float: right;
+        background-color: #fdfdfd;
+        padding: 150px;
+    }
+
+    .inner-container2 {
+        width: 55%;
+        float: right;
+        background-color: #fdfdfd;
+        padding: 100px;
+    }
+
+    .inner-container h1 {
+        margin-bottom: 30px;
+        font-size: 30px;
+        font-weight: 900;
+    }
+
+    .text {
+        font-size: 13px;
+        color: #545454;
+        line-height: 30px;
+        text-align: justify;
+        margin-bottom: 40px;
+    }
+
+    .skills {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 700;
+        font-size: 15px;
+        margin-top: 40px;
+    }
+    .centeralign {
+        text-align: center;
+    }
+</style>
+{% endblock style %}
+
+
+{% block body %}
+
+<section class="team-section">
+    <div class="container">
+        <div class="row">
+            <div class="section-title">
+
+                <div class="about-section">
+                    <div class="inner-container2">
+                        <h1>About Us</h1>
+                        <div class="centeralign">
+                        <p><i>Welcome to <b>[Techblogs]</b>, your numb We're dedicated to giving you the best techblogs plateform , with a focus on [three characteristics, ie: dependability,
+                        user service and uniqueness] Founded in [2021] by </i><b>[Ashutosh]</b> .
+                        <p><i>When <b>[Techblogs]</b> first started out, his passion for [passion of founder, ie: helping other user to be more social active, providing the best plateform
+                        for his fellow user] drove him to [action, ie: to build a technical plateform for technical background people on which they can share their experience
+                        to enhance their knowledge and others as well.</i>
+                        <p><i>We now have user all over [place, ie: the US, india, the world, the Austin area].We hope you enjoy our techblogs website as much as we enjoy offering them
+                        to you. If you have any questions or comments, please don't hesitate to contact us.</i>
+                        </div>
+<br>
+<i>Sincerely,</i>
+<br>
+<br>
+<b>Name, [Mr.Ashutosh Sharma, Founder] </b></p>
+                        <div class="skills">
+                            <span>Frontend development</span>
+                            <span>Backend development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="section-title">
+                <h1><ins>Founder</ins></h1>
+                <p><small><i>"Imagination is everything. It is the preview of life's coming attractions."</i></small></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="team-items">
+                <div class="item">
+                    <img src="static/img/user.jpg" alt="team" />
+                    <div class="inner">
+                        <div class="info">
+                            <h5>Ashutosh Sharma</h5>
+                            <p>Full Stack Developer</p>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/" target="_blank"><span
+                                        class="fa fa-facebook"></span></a>
+                                <a href=""><span class="fa fa-twitter" target="_blank"></span></a>
+                                <a href="https://www.linkedin.com/home target = " _blank" "><span class=" fa
+                                    fa-linkedin"></span></a>
+                                <a href="https://www.youtube.com/" target="_blank"><span
+                                        class="fa fa-youtube"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+{% endblock body %}

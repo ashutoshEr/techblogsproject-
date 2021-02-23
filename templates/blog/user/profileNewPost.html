@@ -1,0 +1,38 @@
+{% extends 'commannavbar.html' %}
+
+{% block title %}User Profile{% endblock title %}
+
+
+
+{% block blogactive %}active{% endblock blogactive %}
+
+
+{% block body %}
+<div class="container my-3">
+<h3> Hey {{user.username}}, Write your Blog here</h3>
+
+<form action = '/blog/profileNewPost' method = 'post'>
+    {% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Title</label>
+    <input type="text" class="form-control" name= 'title' id="title" aria-describedby="emailHelp" Required>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Content</label>
+    <textarea class="form-control" name = "content" id="content" cols = "30" rows = "8" placeholder = "write your content here"></textarea>
+  </div>
+    <input type="hidden" name="author" value="{{user.username}}">
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Slug</label>
+    <input type="text" class="form-control" name= 'slug' id="slug" Required>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">category</label>
+    <input type="text" class="form-control" name= 'category' id="category" Required>
+  </div>
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+
+{% endblock body %}
