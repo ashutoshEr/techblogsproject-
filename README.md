@@ -1,0 +1,2 @@
+# techblogsproject-
+django practice
